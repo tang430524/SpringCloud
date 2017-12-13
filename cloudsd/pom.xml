@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ty</groupId>
+	<artifactId>cloudsd</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>cloudsd</name>
+	<description>spring cloud client</description>
+
+		<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.3.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+<dependencies>  
+            <dependency>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-starter-test</artifactId>  
+                <scope>test</scope>  
+            </dependency>  
+  <!-- spring cloud -->
+            <dependency>  
+                <groupId>org.springframework.cloud</groupId>  
+                <artifactId>spring-cloud-starter-eureka-server</artifactId>  
+            </dependency>  
+  <!--  spring boot 必要的-->        
+            <dependency>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-starter-security</artifactId>  
+            </dependency>  
+            <dependency>  
+                <groupId>org.springframework.boot</groupId>  
+                <artifactId>spring-boot-starter-security</artifactId>  
+            </dependency>  
+        </dependencies>  
+        <!--  dependencyManagement里只是声明依赖，并不实现引入.-->
+ 	<dependencyManagement>  <!--如果在子项目中不写该依赖项，那么子项目中是不会从父项目继承该依赖项的；只有在子项目中写了该依赖项，才会从父项目中继承该项，并且version 和 scope 都读取自 父pom。  -->
+            <dependencies>  
+                <dependency>  
+                    <groupId>org.springframework.cloud</groupId>  
+                    <artifactId>spring-cloud-dependencies</artifactId>  
+                    <version>Camden.SR6</version>  
+                    <type>pom</type>  
+                    <scope>import</scope>  
+                </dependency>  
+            </dependencies>  
+        </dependencyManagement>  
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
